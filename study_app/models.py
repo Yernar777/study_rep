@@ -9,3 +9,7 @@ class Review(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Review1(models.Model):
+    email = models.EmailField()
