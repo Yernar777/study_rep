@@ -10,6 +10,9 @@ def study(request):
 
 
 def review_functional(request):
+    form = ReviewForms()
+    form1 = ReviewForms1()
+    
     if request.method == 'POST':
         form = ReviewForms(request.POST)
         if form.is_valid():
@@ -23,7 +26,7 @@ def review_functional(request):
         if form1.is_valid():
             form1.save()
             return redirect('succes')
-    return render(request, 'forms.html',{'form': form, 'form1': form1})
+    return render(request, 'forms.html',{'form': form, 'form1': form1,})
 
 
 def secces(request):

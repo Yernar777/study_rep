@@ -1,21 +1,24 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
 </head>
 <body>
-    <!-- <h1>Otziv</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{form.as_p}}
-        <button type="submit">Подписаться</button>
-    </form> -->
-    <form method="post">
-        {% csrf_token %}
-        {{form1.as_p}}
-        <button type="submit">Подписаться</button>
-    </form>
+    <div class="main">
+        <div class="main1">
+            <div><h1>Скидка 10% за подписку <br>на новинки и акции</h1></div>
+            <div class="main2">
+                <div class="main3"><form method="post">
+                    {% csrf_token %}
+                    {{form1.as_p}}
+                </form></div>
+                <div><button class="b1" type="submit">Подписаться</button></div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

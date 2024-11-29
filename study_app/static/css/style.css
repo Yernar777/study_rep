@@ -1,0 +1,17 @@
+.main2{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.b1{
+    height: 25px;
+    width: 120px;
+    border: 1px solid black;
+    color: black;
+}
+input{
+    border: 0 0 0 5px solid;
+}
+/* .main{
+    background-color: black;
+} */
