@@ -14,9 +14,12 @@
             <div class="main2">
                 <div class="main3"><form method="post">
                     {% csrf_token %}
-                    {{form1.as_p}}
+                    <div class="main4">
+                        <div>{{form1.as_p}}</div>
+                        <div><button class="b1" type="submit">Подписаться</button></div>
+                    </div>
                 </form></div>
-                <div><button class="b1" type="submit">Подписаться</button></div>
+                
             </div>
         </div>
     </div>
