@@ -7,5 +7,23 @@
 </head>
 <body>
     <a href="{% url 'reviews_form'%}">ostav otziv</a>
+
+
+    <form method="POST" autocomplete="off" class="reg">
+        {% csrf_token %}
+        {{form.username.label_tag}}
+        {{form.username}}
+        <br>
+        {{form.email.label_tag}}
+        {{form.email}}
+        <br>
+        {{form.password1.label_tag}}
+        {{form.password1}}
+        <br>
+        {{form.password2.label_tag}}
+        {{form.password2}}
+        <input type="submit" value="Register" class="reg_button">
+    </form>
+    <a href="{% url 'auth'%}">Войти</a>
 </body>
 </html>
