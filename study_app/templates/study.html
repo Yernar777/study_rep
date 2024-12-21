@@ -25,5 +25,19 @@
         <input type="submit" value="Register" class="reg_button">
     </form>
     <a href="{% url 'auth'%}">Войти</a>
+
+
+    <h2>Список товаров</h2>
+    <ul>
+        {% for product in products %}
+        <li>
+            {{ product.name }} - {{ product.price }} руб.
+            <form action="{% url 'add_to_cart' product.id %}" method="post">
+                {% csrf_token %}
+                <button type="submit">Добавить в корзину</button>
+            </form>
+        </li>
+        {% endfor %}
+    </ul>
 </body>
 </html>
