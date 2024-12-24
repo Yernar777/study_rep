@@ -138,11 +138,11 @@ def checkout(request):
                     quantity=item.quantity
                 )
             
-            cart.item.all().delete()
+            cart.items.all().delete()
             return redirect('order_success')
     else:
         form = OrderForm()
     return render(request, 'checkout.html', {'form': form, 'cart': cart})
 
 def order_success(request):
-    return render(request, 'order_succes.html')
+    return render(request, 'order_success.html')

@@ -32,5 +32,8 @@
         {% endif %}
     </ul>
     <a href="{% url 'home' %}">На главную страницу</a>
+    <form action="{% url 'checkout'%}" method="get" >
+        <button type="submit">Оформить заказ</button>
+    </form>
 </body>
 </html>
