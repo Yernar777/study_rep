@@ -7,7 +7,8 @@ admin.site.register(Review1)
 admin.site.register(Product)
 admin.site.register(Cart)
 admin.site.register(CartItem)
-
+admin.site.register(Category)
+admin.site.register(Product2)
 
 
 class OrderItemInline(admin.TabularInline):

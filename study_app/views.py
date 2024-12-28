@@ -118,8 +118,6 @@ def logout_view(request):
 
 
 
-
-
 def checkout(request):
     cart = get_object_or_404(Cart, user=request.user)
     if request.method == 'POST':
@@ -146,3 +144,10 @@ def checkout(request):
 
 def order_success(request):
     return render(request, 'order_success.html')
+
+
+
+def cross(request,id):
+    products = Product2.objects.filter(category_id=id)
+    return render(request,'cross_products.html',{'products':products})
+

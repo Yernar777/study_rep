@@ -64,3 +64,15 @@ class OrderItem(models.Model):
 
     def __str__(self):
         return f"{self.quantity} x {self.product.name}"
+
+class Category(models.Model):
+    name = models.CharField(max_length=50)
+    def __str__(self):
+        return self.name
+
+class Product2(models.Model):
+    img = models.ImageField(upload_to = 'upload',blank=True,null=True)
+    price = models.IntegerField(max_length=50)
+    description = models.CharField(max_length=50)
+    grade = models.IntegerField(max_length=50)
+    category = models.ForeignKey(Category,on_delete=models.CASCADE,null=True,blank=True)
