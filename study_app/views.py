@@ -82,13 +82,14 @@ def secces(request):
 
 def study(request):
     products = Product.objects.all()
+    category = Category.objects.all()
     form = UserForm()
     if request.method == 'POST':
         form = UserForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect('succes')
-    context = {'form':form,'products':products,}
+    context = {'form':form,'products':products,'category':category,}
     return render(request, 'study.html',context=context)
 
 
@@ -150,4 +151,9 @@ def order_success(request):
 def cross(request,id):
     products = Product2.objects.filter(category_id=id)
     return render(request,'cross_products.html',{'products':products})
+
+
+def cross_detail(request,id):
+    products2 = Product2.objects.get(id=id)
+    return render(request,'cross_details.html',{'products2':products2})
 

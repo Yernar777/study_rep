@@ -7,11 +7,12 @@
 </head>
 <body>
     {% for product in products %}
-    <img src="{{product.img.url}}" alt="product.name">
-    <p>{{product.price}}</p>
-    <h2>{{product.name}}</h2>
-    <p>{{product.description}}</p>
-    <p>{{product.grade}}</p>
+    <a href="{% url 'cross_detail' product.id %}"><img src="{{product.img.url}}" alt="product.name">  
+        <p>{{product.price}}</p>
+        <h2>{{product.name}}</h2>
+        <p>{{product.description}}</p>
+        <p>{{product.grade}}</p>
+        </a>
     {% endfor %}
 </body>
 </html>

@@ -40,8 +40,9 @@
         {% endfor %}
     </ul>
     <div>
-        <div><img src="" alt=""></div>
-        <div><a href="{% url 'cross'%}">Кроссовки</a></div>
+        {% for i in category %}
+        <div><a href="{% url 'cross' i.id%}">{{i.name}}</a></div>
+        {% endfor %}
     </div>
 </body>
 </html>

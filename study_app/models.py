@@ -72,6 +72,11 @@ class Category(models.Model):
 
 class Product2(models.Model):
     img = models.ImageField(upload_to = 'upload',blank=True,null=True)
+    img2 = models.ImageField(upload_to = 'upload',blank=True,null=True)
+    img3 = models.ImageField(upload_to = 'upload',blank=True,null=True)
+    img4 = models.ImageField(upload_to = 'upload',blank=True,null=True)
+    img5 = models.ImageField(upload_to = 'upload',blank=True,null=True)
+    
     price = models.IntegerField(max_length=50)
     description = models.CharField(max_length=50)
     grade = models.IntegerField(max_length=50)
