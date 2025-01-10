@@ -1,9 +1,40 @@
+{% load static %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="product-container">
+        {% for product in products %}
+        <div class="product-card">
+            <a href="{% url 'cross_detail' product.id %}">
+                <div class="product-image">
+                    <img src="{{ product.img.url }}" alt="{{ product.name }}">
+                </div>
+                <div class="product-info">
+                    <p class="product-price">{{ product.price }} ₸</p>
+                    <h2 class="product-name">{{ product.name }}</h2>
+                    <p class="product-description">{{ product.description }}</p>
+                    <p class="product-grade">★ {{ product.grade }}</p>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
     {% for product in products %}
